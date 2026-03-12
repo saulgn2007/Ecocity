@@ -1,5 +1,6 @@
 package ecocity;
 
 public interface GeneradorRecursos {
-	public void generarRecursos();
+    double producirRecurso();
+    String getTipoRecurso();
 }
