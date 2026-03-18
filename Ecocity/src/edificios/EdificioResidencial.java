@@ -34,10 +34,7 @@ public class EdificioResidencial extends Edificio implements GeneradorRecursos {
 	    @Override
 	    public void aplicarEfectoMensual() {
 	        double impuestos = producirRecurso();
-	        System.out.printf(
-	            "  🏠 %-20s → +%d hab. | +$%.0f impuestos | -%.0f L agua | -%.1f MW energía%n",
-	            nombre, habitantes, impuestos, consumoAgua, consumoEnergia
-	        );
+	        System.out.printf("🏠 %-20s → +%d hab. | +$%.0f impuestos | -%.0f L agua | -%.1f MW energía%n", nombre, habitantes, impuestos, consumoAgua, consumoEnergia);
 	        desgastar(3);  // Desgaste mensual estándar
 	    }
 
