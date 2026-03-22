@@ -64,7 +64,7 @@ public abstract class Edificio implements Mantenible {
 
     @Override
     public String toString() {
-        String estadoSalud = salud >= 70 ? "✅" : (salud >= 30 ? "⚠️ " : "🔴");
+        String estadoSalud = salud >= 70 ?  : (salud >= 30 ?);
         return String.format(
             "%-22s | Costo: $%8.0f | Energía consumida: %5.1f MW | Salud: %s %3d%%",
             nombre, costo, consumoEnergia, estadoSalud, salud
