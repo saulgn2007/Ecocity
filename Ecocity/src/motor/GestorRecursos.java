@@ -36,7 +36,7 @@ public class GestorRecursos {
     public void consumirEnergia(double cantidad) {
         energia -= cantidad;
         if (energia < ENERGIA_MINIMA) {
-            registrarEvento("⚡ Déficit energético: energía en negativo (" + String.format("%.1f", energia) + " MW)");
+            registrarEvento(" Déficit energético: energía en negativo (" + String.format("%.1f", energia) + " MW)");
         }
     }
 
@@ -106,9 +106,9 @@ public class GestorRecursos {
         String iconFelicidad = felicidad >= 70 ? "😊" : (felicidad >= 40 ? "😐" : "😟");
         String iconEnergia   = energia  >= 0   ? "✅"  : "🔴";
         return String.format(
-            "  💰 Dinero:    $%,.0f%n" +
+            "  Dinero:    $%,.0f%n" +
             "  %s Energía:   %.1f MW%n" +
-            "  💧 Agua:      %.0f L%n" +
+            "  Agua:      %.0f L%n" +
             "  %s Felicidad: %d/100",
             dinero, iconEnergia, energia, agua, iconFelicidad, felicidad
         );
