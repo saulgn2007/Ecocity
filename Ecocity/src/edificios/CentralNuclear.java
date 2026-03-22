@@ -39,7 +39,7 @@ public class CentralNuclear extends EdificioIndustrial {
         verificarEstadoNuclear();
         double energia = producirRecurso();
         System.out.printf(
-            "  ⚛️  %-20s → +%.1f MW energía | Eficiencia: %.0f%% | Salud: %d%%%n",
+            "    %-20s → +%.1f MW energía | Eficiencia: %.0f%% | Salud: %d%%%n",
             nombre, energia, factorEficiencia() * 100, salud
         );
         desgastar(5);  // Las centrales nucleares se desgastan más rápido
@@ -57,11 +57,11 @@ public class CentralNuclear extends EdificioIndustrial {
 
     public void activarProtocoloEmergencia() {
         System.out.printf(
-            "  ☢️  [EMERGENCIA] Activando protocolo de contención en %s...%n", nombre
+            "   [EMERGENCIA] Activando protocolo de contención en %s...%n", nombre
         );
         this.capacidadProduccion = PRODUCCION_BASE_MW * 0.5;
         this.en_modo_emergencia  = true;
-        System.out.println("  ✅  Protocolo activado. Producción reducida al 50%.");
+        System.out.println("   Protocolo activado. Producción reducida al 50%.");
     }
 
     @Override
@@ -70,7 +70,7 @@ public class CentralNuclear extends EdificioIndustrial {
         if (salud > UMBRAL_RIESGO) {
             en_modo_emergencia   = false;
             capacidadProduccion  = PRODUCCION_BASE_MW;
-            System.out.println("  ✅  Central nuclear fuera de zona de riesgo. Modo normal restaurado.");
+            System.out.println("   Central nuclear fuera de zona de riesgo. Modo normal restaurado.");
         }
     }
 
@@ -78,10 +78,10 @@ public class CentralNuclear extends EdificioIndustrial {
 
     @Override
     public String toString() {
-        String alerta = (salud <= UMBRAL_RIESGO) ? " ☢️ ¡RIESGO CRÍTICO!" : "";
+        String alerta = (salud <= UMBRAL_RIESGO) ? "  ¡RIESGO CRÍTICO!" : "";
         return super.toString() + alerta + String.format(
-            "%n    └─ ⚛️  Nuclear | Producción: %.0f MW | Umbral peligro: %d%% salud%s",
-            capacidadProduccion, UMBRAL_RIESGO, en_modo_emergencia ? " | 🔴 EN EMERGENCIA" : ""
+            "%n    └─   Nuclear | Producción: %.0f MW | Umbral peligro: %d%% salud%s",
+            capacidadProduccion, UMBRAL_RIESGO, en_modo_emergencia ? " |  EN EMERGENCIA" : ""
         );
     }
 }
