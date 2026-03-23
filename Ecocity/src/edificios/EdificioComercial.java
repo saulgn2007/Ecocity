@@ -33,7 +33,7 @@ public class EdificioComercial extends Edificio implements GeneradorRecursos {
         desgastar(2);
     }
 
-    public int    getBonusFelicidad() { 
+    public int getBonusFelicidad() { 
     	return bonusFelicidad; 
     	}
     public double getIngresoBase() { 
