@@ -2,10 +2,8 @@ package edificios;
 import motor.GestorRecursos;
 
 public class CentralNuclear extends EdificioIndustrial {
-
     private static final int  UMBRAL_RIESGO = 20;
     private static final double PRODUCCION_BASE_MW = 500.0;
-
     private boolean modo_emergencia;
     private boolean explotada;
 
